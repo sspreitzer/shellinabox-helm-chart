@@ -1,0 +1,14 @@
+apiVersion: v2
+name: whoami
+version: 1.0.0
+kubeVersion: '>=1.20'
+description: shellinabox
+keywords:
+  - shellinabox
+home: https://git.spreitzer.ch/helm/shellinabox
+sources:
+  - https://git.spreitzer.ch/helm/shellinabox.git
+maintainers:
+  - name: Sascha Spreitzer
+    email: sascha@spreitzer.ch
+    url: https://spreitzer.ch

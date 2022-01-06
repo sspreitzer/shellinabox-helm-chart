@@ -1,0 +1,8 @@
+replicas: 1
+
+nodeSelector: {}
+
+tolerations: []
+
+image: sspreitzer/shellinabox
+tag: centos

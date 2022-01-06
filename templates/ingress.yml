@@ -2,9 +2,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: "{{ .Release.Name }}"
+  name: {{ include "shellinabox.fullname" . }}
   labels:
-    {{- include "shellinabox.labels" . | nindent 4 }}
+   {{- include "shellinabox.labels" . | nindent 4 }}
   {{- if .Values.ingress.annotations }}
   annotations:
     {{- .Values.ingress.annotations | toYaml | nindent 4 }}
@@ -24,7 +24,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: "{{ .Release.Name }}"
+                name: {{ include "shellinabox.fullname" . }}
                 port:
                   number: 4200
 {{- end -}}

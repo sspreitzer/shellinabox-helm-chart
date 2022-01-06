@@ -9,10 +9,12 @@ tolerations: []
 
 image: sspreitzer/shellinabox
 tag: centos
+imagePullPolicy: Always
 
 ingress:
   enabled: false
-  annotations: {}
+  annotations:
+
   tls: false
   host: shell.example.com
   tlsSecret: shellinabox-tls

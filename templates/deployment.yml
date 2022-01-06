@@ -4,6 +4,8 @@ metadata:
   name: {{ include "shellinabox.fullname" . }}
   labels:
     {{- include "shellinabox.labels" . | indent 4 }}
+  annotations:
+    checksum/configmap: {{ include (print $.Template.BasePath "/configmap.yml") . | sha256sum }}
 spec:
   replicas: {{ .Values.replicas }}
   selector:
@@ -13,6 +15,8 @@ spec:
     metadata:
       labels:
         {{- include "shellinabox.labels" . | indent 8 }}
+      annotations:
+        checksum/configmap: {{ include (print $.Template.BasePath "/configmap.yml") . | sha256sum }}
     spec:
       {{- if .Values.nodeSelector }}
       nodeSelector:

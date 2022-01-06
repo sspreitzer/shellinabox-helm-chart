@@ -1,5 +1,5 @@
 config:
-  SIAB_SSL: true
+  SIAB_SSL: "true"
 
 replicas: 1
 

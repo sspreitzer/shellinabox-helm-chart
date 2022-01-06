@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "{{ .Release.Name }}"
+  labels:
+    {{- include "shellinabox.labels" . | indent 4 }}
+data:
+  {{- .Values.config | toYaml | nindent 2 }}

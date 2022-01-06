@@ -6,3 +6,10 @@ tolerations: []
 
 image: sspreitzer/shellinabox
 tag: centos
+
+ingress:
+  enabled: false
+  annotations: {}
+  tls: false
+  host: shell.example.com
+  tlsSecret: shellinabox-tls
